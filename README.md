@@ -7,7 +7,7 @@ Scripts in this projects are organized into three categories:
 
   1. [Helm](https://helm.sh/) setup, where we prepare the cluster to process Heml charts.
   2. Cluster provision, where we install waes-ta prerequisites.
-  3. Deployment, where a waes-ta is deployed.
+  3. Deployment, where waes-ta is deployed.
 
 ## Helm Setup
 At this stage we prepare the cluster to be able to process Helm charts. This amounts to 
@@ -44,7 +44,7 @@ file-based secret to the cluster.
 
 We then deploy waes-ta by specifying a deployment asking for two active pods. Each pod includes
 just a single [waes-ta Docker image](https://cloud.docker.com/repository/docker/ppedemon/waes-ta). 
-Images are automatically submitted to Docker Hub by [waes-ta CI configuration](https://github.com/ppedemon/waes-ta/blob/master/.travis.yml).
+Images are automatically submitted to Docker Hub by [waes-ta CI pipeline](https://github.com/ppedemon/waes-ta/blob/master/.travis.yml).
 
 Lastly, We define yet another `NodePort` service to provide a uniform access point to the waes-ta API. 
 The current cluster serves the API at `${HOST}:30800`. So after negotiating a token as explained above, 
