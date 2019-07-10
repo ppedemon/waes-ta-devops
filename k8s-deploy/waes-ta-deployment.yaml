@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: waes-ta-deployment
+  labels:
+    app: waes-ta
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: waes-ta
+  template:
+    metadata:
+      labels:
+        app: waes-ta
+    spec:
+      containers:
+      - name: waes-ta
+        image: ppedemon/waes-ta:1.0.3
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: waes-config
+          mountPath: /opt/config
+          readOnly: true
+        env:
+        - name: CONFIG
+          value: /opt/config/staging.json
+      volumes:
+      - name: waes-config
+        secret:
+          secretName: config-secret

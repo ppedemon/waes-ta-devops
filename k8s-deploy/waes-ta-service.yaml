@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: waes-ta-service
+  labels:
+    app: waes-ta
+spec:
+  selector:
+    app: waes-ta
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: 30800

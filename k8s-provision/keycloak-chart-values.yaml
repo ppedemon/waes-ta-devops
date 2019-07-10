@@ -1,0 +1,17 @@
+keycloak:
+  password: passw0rd
+  service:
+    type: NodePort
+    nodePort: 30900
+  persistence:
+    deployPostgres: true
+    dbVendor: postgres
+  extraVolumes: |
+    - name: realm-secret
+      secret:
+        secretName: realm-secret
+  extraVolumeMounts: |
+    - name: realm-secret
+      mountPath: "/realm/"
+      readOnly: true
+  extraArgs: -Dkeycloak.import=/realm/waes-realm.json
