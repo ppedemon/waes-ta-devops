@@ -1,7 +1,7 @@
 # Waes Technical Assignment Devops
 This project defines scripts required to deploy the [waes-ta](https://github.com/ppedemon/waes-ta) 
-project to [Kubernetes](https://kubernetes.io/). The Kubernetes cluster is a free single
-node cluster hosted by [IBM Cloud](https://www.ibm.com/cloud/).
+project to [Kubernetes](https://kubernetes.io/). For this I'm using a free single node cluster 
+hosted by [IBM Cloud](https://www.ibm.com/cloud/).
 
 Scripts in this projects are organized into three categories:
 
@@ -22,7 +22,7 @@ The Keycloak server will be initialized with a predefined realm, and exposed to 
 by means of a [NodePort](https://kubernetes.io/docs/concepts/services-networking/service/#nodeport) 
 Kubernetes service at port `30900` on the cluster's single node external IP address.
 
-You can execute the following store in a `HOST` environment variable the external IP address of 
+You can execute the following to store in a `HOST` environment variable the external IP address of 
 the cluster's node:
 
 ```bash
