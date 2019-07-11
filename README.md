@@ -59,7 +59,7 @@ to invoke the API using the Swagger UI.
 
 ## Todos
 The main missing part is an [Ingress resource](https://kubernetes.io/docs/concepts/services-networking/ingress/) 
-providing a externally reachable URL for the Rest API and more importantly, TLS termination.
+providing a externally reachable domain name for the Rest API and more importantly, TLS termination.
 
 The API uses bearer JWT authentication. Since JWTs are _signed_ but **not** _encrypted_, they must not
 be exchanged in clear text form. This means we should be using HTTPS instead of HTTP. In a clustered
