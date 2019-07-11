@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: waes-ta
-        image: ppedemon/waes-ta:1.0.4
+        image: ppedemon/waes-ta:1.1.0
         ports:
         - containerPort: 8080
         volumeMounts:
